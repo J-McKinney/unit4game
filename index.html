@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Collect the Crystal Value</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
+    <link rel="stylesheet" type="text/css" href="assests\css\style.css">
+    <link type="text/javascript" src="assests\javascript\game.js">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <header class="conatiner-fluid">
+        <h1>Crystal collector</h1>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div id="rule-col" class="col-md-6">
+                <h2>Rules: </h2>
+                <p>You will be given a random number at the start of the game.</p>
+                <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to
+                    your total score.</p>
+                <p>You win the game by matching your total score to random number, you lose the game if your total score
+                    goes above the random number.</p>
+                <p>The value of each crystal is hidden from you until you click on it.</p>
+                <p>Each time when the game starts, the game will change the values of each crystal.</p>
+            </div>
+            <div id="img-col" class="col-md-6">
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h3>Number To Match: </h3>
+            </div>
+            <div class="col-md-2" id="matchNum">
+            </div>
+            <div class="col-md-6" id="scrBrd">
+                <h2>Score-Board</h2>
+                <div class="row" id="wins">
+                    <h4>Wins: </h4>
+                </div>
+                <div class="row" id="losses">
+                    <h4>Losses: </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div id="rup1"></div>
+            <div class="col-md-3"></div>
+            <div id="rup2"></div>
+            <div class="col-md-3"></div>
+            <div id="rup3"></div>
+            <div class="col-md-3"></div>
+            <div id="rup4"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4" id="bldgNum">
+                <h3>Your Number Is: </h3>
+            </div>
+            <div class="col-md-2" id="blank">
+                /////////////////////////////////////
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="assests\javascript\game.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+<footer>
+
+</footer>
