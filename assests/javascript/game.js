@@ -1,137 +1,70 @@
 $(document).ready(function () {
+   /////////////////////////////////////////////////////////////////////////////////////////////////
    let compNum = Math.floor(Math.random() * 102) + 19;
    console.log(compNum);
    $("#matchNum").html(compNum);
+   const newLocal = 0;
    //computer picks a number between 19 and 120, that number is sent to id=matchNum
-   ///////////////////////////////////////////////////////////////////////////////////
-
-   let rup1 = Math.floor(Math.random() * 12) + 1;
-   console.log("rupee1: " + rup1);
-   $("#rup1").html("<img src=" + "assests/images/green rupee.jpg" + " value=" + rup1 + ">");
-   //User picks the rupee1 with an unknown number??? it is sent to rupee1 pic as a defined value
-   /////////////////////////////////////////////////////////////////////////////////
-
-   let rup2 = Math.floor(Math.random() * 12) + 1;
-   console.log("rupee2: " + rup2);
-   $("#rup2").html(rup2);
-   //User picks the rupee2 with an unknown number??? it is sent to rupee2 pic as a defined value
-   //////////////////////////////////////////////////////////////////////////////////
-
-   let rup3 = Math.floor(Math.random() * 12) + 1;
-   console.log("rupee3: " + rup3);
-   $("#rup3").html(rup3);
-   //User picks the rupee3 with an unknown number??? it is sent to rupee3 pic as a defined value
-   /////////////////////////////////////////////////////////////////////////////////
-
-   let rup4 = Math.floor(Math.random() * 12) + 1;
-   console.log("rupee4: " + rup4);
-   $("#rup4").html(rup4);
-   //User picks the rupee3 with an unknown number??? it is sent to rupee3 pic as a defined value
-   /////////////////////////////////////////////////////////////////////////////////
+   /////////////////////////////////////////////////////////////////////////////////////////////////////
+   let arr = [];
+   while (arr.length < 6) {
+      var i = Math.floor(Math.random() * 11) + 1;
+      if (arr.indexOf(i) === -1) arr.push(i);
+   }
+   console.log(arr);
+   ///////////////////////////////////////////////////////////////////////////////////////////////////////
+   let rup1 = arr[0];
+   console.log(rup1);
+   // $("#rup1").html("<img src=" + "assests/images/BotW_Green_Rupee_Icon.png" + " value=" + rup1 + ">");
+   ////////////////////////////////////////////////////////////////////////////////////////////////////
+   let rup2 = arr[1];
+   console.log(rup2);
+   // $("#rup2").html("<img src=" + "assests/images/redrupee.png" + " value=" + rup2 + ">");
+   ///////////////////////////////////////////////////////////////////////////////////////////////////
+   let rup3 = arr[2];
+   console.log(rup3);
+   // $("#rup3").html("<img src=" + "assests/images/bluerupee.png" + " value=" + rup3 + ">");
+   ///////////////////////////////////////////////////////////////////////////////////////////////////
+   let rup4 = arr[3];
+   console.log(rup4);
+   // $("#rup4").html("<img src=" + "assests/images/yellorupee.png" + " value=" + rup4 + ">");
+   ////////////////////////////////////////////////////////////////////////////////////////////////////
    let bldgNum = 0;
    console.log("score: " + bldgNum);
+   $("#bldgNum").html(bldgNum);
    //logging the score at the beginning of the game to zero
-   /////////////////////////////////////////////////////////////
-
+   ////////////////////////////////////////////////////////////////////////////////////////////////
    let wins = 0;
    console.log("wins: " + wins);
    //logging the total wins at the beginning of the game
-   ////////////////////////////////////////////////////////////
-
+   ////////////////////////////////////////////////////////////////////////////////////////////////
    let losses = 0;
    console.log("losses: " + losses);
    //logging the total losses at the beginning of the game
    //////////////////////////////////////////////////////////////////////////////////////////////////
-   //////////////////////////////////////////////////////////////////////////////////////////////////
-   //////////////////////////////////////////////////////////////////////////////////////////////////
+$("#rup1").on("click", function() {
+   bldgNum += rup1;
+   $("#bldgNum").html(bldgNum);
+})
+//rupee1 has a value assigned from the while loop in the blank array, it will add to the bldgNum
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+$("#rup2").on("click", function() {
+   bldgNum += rup2;
+   $("#bldgNum").html(bldgNum);
+})
+//rupee2 has a value assigned from the while loop in the blank array, it will add to the bldgNum
+////////////////////////////////////////////////////////////////////////////////////////////////
+$("#rup3").on("click", function() {
+   bldgNum += rup3;
+   $("#bldgNum").html(bldgNum);
+})
+//rupee3 has a value assigned from the while loop in the blank array, it will add to the bldgNum
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+$("#rup4").on("click", function() {
+   bldgNum += rup4;
+   $("#bldgNum").html(bldgNum);
+})
+//rupee4 has a value assigned from the while loop in the blank array, it will add to the bldgNum
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 
-   function rst() {
-      compNum = Math.floor(Math.random() * 102) + 19;
-      console.log("compNum: " + compNum);
-      $("#matchNum").html(compNum);
-      //reset function
-      /////////////////////////////////////////////////////////
-
-      bldgNum = 0;
-      $("#bldgNum").html(bldgNum);
-      //your starting number is equal to zero again with the reset
-      ////////////////////////////////////////////////////////
-
-      rup1 = Math.floor(Math.random() * 12) + 1;
-      console.log("rupee1: " + rup1);
-      $("#rup1").html("<img src=" + "assests/images/green rupee.jpg" + " value=" + rup1 + ">");
-      //crystals are reset again with the game reset with different values
-      ////////////////////////////////////////////////////////////////////
-
-      rup2 = Math.floor(Math.random() * 12) + 1;
-      console.log("rupee2: " + rup2);
-      $("#rup2").html(rup2);
-      //crystals are reset again with the game reset with different values
-      ////////////////////////////////////////////////////////////////////
-
-      rup3 = Math.floor(Math.random() * 12) + 1;
-      console.log("rupee3: " + rup3);
-      $("#rup3").html(rup3);
-      //crystals are reset again with the game reset with different values
-      ////////////////////////////////////////////////////////////////////
-
-      rup4 = Math.floor(Math.random() * 12) + 1;
-      console.log("rupee4: " + rup4);
-      $("#rup4").html(rup4);
-      //crystals are reset again with the game reset with different values
-      //////////////////////////////////////////////////////////////////////////////////////////////////
-      //////////////////////////////////////////////////////////////////////////////////////////////////
-      //////////////////////////////////////////////////////////////////////////////////////////////////
-
-      $("#rup").click(function () {
-         let newBldgNum = bldgNum += parseInt($(this).attr("value"));
-         $("#bldgNum").html(newBldgNum);
-         //click function is set to add values based on which crystal user clicks on and adds 
-         //it the building number to try and match the matching number
-         /////////////////////////////////////////////////////////////////////////////////////
-
-         if (newBldgNum === compNum) {
-            wins++;
-            $("#wins").html("wins: " + wins);
-            console.log("wins: " + wins);
-            rst();
-            //if the users building number matches the match number, tally a win and reset
-            //////////////////////////////////////////////////////////////////////////////
-
-         } else if (newBldgNum > compNum) {
-            losses++;
-            $("#losses").html("losses: " + losses);
-            rst();
-            //if the users building number goes over the match number, tally a loss and reset
-            /////////////////////////////////////////////////////////////////////////////////
-         };
-      });
-   };
-   $("#rup").click(function () {
-      let newBldgNum = bldgNum += parseInt($(this).attr("value"));
-      $("#bldgNum").html(newBldgNum);
-      //click function is set to add values based on which crystal user clicks on and adds 
-      //it the building number to try and match the matching number
-      /////////////////////////////////////////////////////////////////////////////////////
-
-      if (newBldgNum === compNum) {
-         wins++;
-         $("#wins").html("wins: " + wins);
-         console.log("wins: " + wins);
-         rst();
-         //if the users building number matches the match number, tally a win and reset
-         //////////////////////////////////////////////////////////////////////////////
-
-      } else if (newBldgNum > compNum) {
-         losses++;
-         $("#losses").html("losses: " + losses);
-         rst();
-         //if the users building number goes over the match number, tally a loss and reset
-         /////////////////////////////////////////////////////////////////////////////////
-      };
-   });
-});
-
-
-
-
+})
