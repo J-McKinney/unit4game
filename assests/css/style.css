@@ -3,7 +3,6 @@ body {
 }
 
 #num,
-#bldgNum,
 #matchNum,
 #win,
 #lose,
@@ -15,3 +14,7 @@ body {
     line-height: 200%;
 }
 
+#bldgNum {
+    font-size: 40px;
+    font-weight: bold;
+}
